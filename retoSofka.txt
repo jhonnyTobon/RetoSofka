@@ -1,0 +1,33 @@
+no se debe tener clave en el g
+
+el gestor de datos no debe tener contraseña y se debe contar con el jdk 15
+
+
+no se termina el desarrollo del proyecto debido a mi falta de tiempo, de pasar a la capacitación esta en mis posibilidades renunciar y comprometerme a estudiar con todos los animos posibles.
+entrego desde el dia de hoy porque estoy en turno, soy vigilante
+
+create database retoSofka;
+
+use retoSofka;
+
+
+create table preguntas(
+codigo varchar(15) not null,
+categoria varchar(8) not null,
+pregunta varchar(80) not null,
+constraint pk_preguntas primary key preguntas(codigo));
+
+create table respuestas(
+id_respuesta int auto_increment,
+respuesta varchar(30) not null,
+bandera varchar(10) not null,
+codigo varchar(15) not null,
+categoria varchar(8) not null,
+constraint pk_respuestas primary key respuestas(id_respuesta),
+constraint fk_respuestsa foreign key respuestas(codigo) references preguntas(codigo));
+
+create table puntajes(
+id_user int auto_increment,
+nombre varchar(30) not null,
+puntaje int not null,
+nivel int not null);
